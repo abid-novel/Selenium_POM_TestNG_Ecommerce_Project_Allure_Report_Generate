@@ -18,7 +18,7 @@ public class Setup {
     public void setup() {
         System.setProperty("webdriver.gecko.driver", "./src/test/resources/geckodriver.exe");
         FirefoxOptions firefoxOptions = new FirefoxOptions();
-        firefoxOptions.addArguments("--headed");
+        firefoxOptions.addArguments("--headless");
         driver = new FirefoxDriver(firefoxOptions);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
