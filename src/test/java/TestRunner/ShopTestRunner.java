@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class ShopTestRunner extends Setup {
 
-    @Test
+    @Test(description = "Click the shop tab")
     public void clickShopTab() {
         driver.get("https://envothemes.com/envo-ecommerce");
         Shop shop = new Shop(driver);
@@ -15,7 +15,7 @@ public class ShopTestRunner extends Setup {
         Assert.assertTrue(getText.contains("SHOP"));
     }
 
-    @Test
+    @Test(description = "Search product by name")
     public void productSearchByName() throws InterruptedException {
         driver.get("https://envothemes.com/envo-ecommerce");
         Shop shop = new Shop(driver);
@@ -23,7 +23,7 @@ public class ShopTestRunner extends Setup {
         Assert.assertTrue(getText.contains("Hard top"));
     }
 
-    @Test
+    @Test(description = "Search product by wrong name")
     public void productSearchByWrongName() {
         driver.get("https://envothemes.com/envo-ecommerce");
         Shop shop = new Shop(driver);
@@ -31,7 +31,7 @@ public class ShopTestRunner extends Setup {
         Assert.assertTrue(getText.contains("No products were found matching your selection."));
     }
 
-    @Test
+    @Test(description = "Sort products by price low to high")
     public void sortProductByPriceLowToHigh() {
         driver.get("https://envothemes.com/envo-ecommerce");
         Shop shop = new Shop(driver);
@@ -39,7 +39,7 @@ public class ShopTestRunner extends Setup {
         Assert.assertTrue(getText.contains("Black trousers"));
     }
 
-    @Test
+    @Test(description = "Sort products by price high to low")
     public void sortProductByPriceHighToLow() {
         driver.get("https://envothemes.com/envo-ecommerce");
         Shop shop = new Shop(driver);
@@ -47,7 +47,7 @@ public class ShopTestRunner extends Setup {
         Assert.assertTrue(getText.contains("Black pants"));
     }
 
-    @Test
+    @Test(description = "Filter products by color")
     public void filterProductByColor() {
         driver.get("https://envothemes.com/envo-ecommerce");
         Shop shop = new Shop(driver);

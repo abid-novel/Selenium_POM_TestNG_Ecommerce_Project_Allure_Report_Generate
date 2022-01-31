@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class SaleTestRunner extends Setup {
 
-    @Test
+    @Test(description = "Click the sale tab")
     public void clickSaleTab() {
         driver.get("https://envothemes.com/envo-ecommerce");
         Sale sale = new Sale(driver);
@@ -15,7 +15,7 @@ public class SaleTestRunner extends Setup {
         Assert.assertTrue(getText.contains("SALE"));
     }
 
-    @Test
+    @Test(description = "Select a product from sale tab")
     public void productSelection() {
         driver.get("https://envothemes.com/envo-ecommerce");
         Sale sale = new Sale(driver);
