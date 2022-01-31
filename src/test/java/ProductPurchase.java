@@ -65,16 +65,23 @@ public class ProductPurchase {
         return lblViewCart.getText();
     }
 
+    public String checkOut() {
+        btnCheckOut.click();
+        return lblCheckOut.getText();
+    }
+
     public String wrongCoupon() throws InterruptedException {
+        Select select = new Select(dropDownCategory);
+        select.selectByIndex(4);
+        iconSearch.click();
+        imgProduct.get(3).click();
+        btnAddCart.click();
+        Thread.sleep(3000);
+        btnViewCart.get(2).click();
         txtFieldCouponCode.sendKeys("xyz");
         btnApplyCode.get(0).click();
         Thread.sleep(3000);
         return lblWrongCoupon.getText();
-    }
-
-    public String checkOut() {
-        btnCheckOut.click();
-        return lblCheckOut.getText();
     }
 }
 
