@@ -25,3 +25,9 @@ dependencies {
 
 }
 
+test {
+    useTestNG() {
+        suites "./testNG.xml"
+    }
+}
+

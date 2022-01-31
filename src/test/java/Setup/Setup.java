@@ -9,7 +9,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import java.io.IOException;
 import java.time.Duration;
 
 public class Setup {
@@ -32,7 +31,7 @@ public class Setup {
                 Utils utils = new Utils(driver);
                 utils.takeScreenShot();
             } catch (Exception e) {
-                System.out.println(e.toString());
+                System.out.println(e);
             }
         }
     }
