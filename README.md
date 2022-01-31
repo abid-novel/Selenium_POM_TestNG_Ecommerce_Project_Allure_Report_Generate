@@ -19,3 +19,8 @@
   ```
   allure serve allure-results
   ```
+  
+  ## Screenshots of the Allure Report
+  
+![Allure_Report_Screenshot_1](https://user-images.githubusercontent.com/96170694/151860945-9246ee38-f8ea-47b4-a250-673c65eb4b8a.JPG)
+![Allure_Report_Screenshot_2](https://user-images.githubusercontent.com/96170694/151860952-b5985d33-ca45-42fb-a22f-9cd41f342561.JPG)
