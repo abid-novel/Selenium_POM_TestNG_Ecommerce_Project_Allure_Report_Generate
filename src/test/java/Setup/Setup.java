@@ -38,7 +38,7 @@ public class Setup {
 
     @AfterTest
     public void closeBrowser() {
-        //driver.close();
+      driver.close();
     }
 
 }
