@@ -1,11 +1,15 @@
 package Setup;
 
+import Utils.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import java.io.IOException;
 import java.time.Duration;
 
 public class Setup {
@@ -19,6 +23,18 @@ public class Setup {
         driver = new FirefoxDriver(firefoxOptions);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+    }
+
+    @AfterMethod
+    public void screenShot(ITestResult result) {
+        if (ITestResult.FAILURE == result.getStatus()) {
+            try {
+                Utils utils = new Utils(driver);
+                utils.takeScreenShot();
+            } catch (Exception e) {
+                System.out.println(e.toString());
+            }
+        }
     }
 
     @AfterTest
