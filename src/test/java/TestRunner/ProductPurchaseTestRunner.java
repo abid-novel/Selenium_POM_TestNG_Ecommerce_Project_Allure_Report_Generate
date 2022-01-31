@@ -1,3 +1,7 @@
+package TestRunner;
+
+import Pages.ProductPurchase;
+import Setup.Setup;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
